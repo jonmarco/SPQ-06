@@ -1,0 +1,41 @@
+package main.java.es.deusto.ingenieria.spq.server.assemblers;
+
+import main.java.es.deusto.ingenieria.spq.server.data.Usuario;
+import main.java.es.deusto.ingenieria.spq.server.dto.UsuarioDTO;
+
+public class UsuarioAssembler {
+	
+		public static UsuarioAssembler instance;
+
+		public static UsuarioAssembler getInstance() {
+			if (instance == null) {
+				instance = new UsuarioAssembler();
+			}
+			return instance;
+		}
+
+		public UsuarioDTO getUsuarioDTO(Usuario usuario) {
+			UsuarioDTO dto = new UsuarioDTO(usuario.getCorreo());
+			return dto;
+		}
+	}
+
+
+
+/*
+public class LoginAssembler {
+	public static LoginAssembler instance;
+
+	public static LoginAssembler getInstance() {
+		if (instance == null) {
+			instance = new LoginAssembler();
+		}
+		return instance;
+	}
+
+	public UsuarioDTO getUsuarioDTO(Usuario usuario) {
+		UsuarioDTO dto = new UsuarioDTO(usuario.getNick(), usuario.getEmail());
+		return dto;
+	}
+}
+*/
