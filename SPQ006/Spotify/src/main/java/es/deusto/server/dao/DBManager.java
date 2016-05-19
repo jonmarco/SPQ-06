@@ -20,7 +20,10 @@ import es.deusto.server.data.Usuario;
 import es.deusto.server.dto.CancionDTO;
 import es.deusto.server.dto.UsuarioDTO;
 
-
+/**
+ * Here is the class of the DBManager
+ *
+ */
 
 
 public class DBManager {
@@ -35,9 +38,13 @@ public class DBManager {
 		}
 		return instance;
 	}
-	
+	/**
+	 * The basic class of the connection with de BD
+	 *
+	 */
 	public static void connect() {
 		if(pmf==null)
+		
 			pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		if(pm == null || pm.isClosed())
 			pm = pmf.getPersistenceManager();
@@ -52,6 +59,10 @@ public class DBManager {
 		 private String album;
 		 private String artista;
 		 * 
+		 */
+		/**
+		 * The initialitations of the cancion objects
+		 *
 		 */
 		
 
@@ -75,7 +86,10 @@ public class DBManager {
 		private Boolean Reproduciendo= false;
 		*/
 	
-		
+		/**
+		 * here we create new users
+		 *
+		 */
 		Usuario jon = new Usuario("jon.marco@opendeusto.es", "1234", null);
 		Usuario ander = new Usuario("ander.loizaga@opendeusto.es", "1234", null);
 		Usuario david = new Usuario("david.baz@opendeusto.es", "1234", null);
@@ -84,7 +98,11 @@ public class DBManager {
 		
 		
 		DBManager.connect();
-				// Transaction to group DB operations
+		/**
+		 * Transaction to group DB operations
+		 *
+		 */
+				 
 				Transaction tx = pm.currentTransaction();
 				try {
 					System.out.println("- Cargar DB Cancion y Usuario");
@@ -92,17 +110,26 @@ public class DBManager {
 					pm = pmf.getPersistenceManager();
 					// Obtain the current transaction
 					tx = pm.currentTransaction();
-					// Start the transaction
+					/**
+					 * start the transaction
+					 *
+					 */
 					tx.begin();
 
 					
-					// load de users
+					/**
+					 * load the users
+					 *
+					 */
 					pm.makePersistent(jon);
 					pm.makePersistent(ander);
 					pm.makePersistent(david);
 					pm.makePersistent(inigo);
 					
-					// load de songs
+					/**
+					 * load the songs
+					 *
+					 */
 					
 					pm.makePersistent(cancion1);
 					pm.makePersistent(cancion2);
@@ -114,9 +141,12 @@ public class DBManager {
 					pm.makePersistent(cancion8);
 					pm.makePersistent(cancion9);
 					
-
+					/**
+					 * the end of transaction
+					 *
+					 */
 					tx.commit();
-					// End the transaction
+					
 					
 					
 	
@@ -144,7 +174,11 @@ public class DBManager {
 	}
 	
 
-	
+	/**
+	 * the basic method to log a user
+	 * @param
+	 *
+	 */
 	public Usuario loginUsuario(String correo, String password){
 		DBManager.connect();
 		Transaction tx = pm.currentTransaction();
@@ -179,6 +213,12 @@ public class DBManager {
 		
 	}
 	
+	/**
+	 *the method of buscar usuario which finds a user with his email
+	 *@param
+	 *
+	 *
+	 */
 	
 	
 	public Usuario buscarUsuario(String correo){
@@ -211,6 +251,12 @@ public class DBManager {
 		return usuarios.get(0);
 	}
 		
+	/**
+	 *the method of buscar usuario which finds a users string with his emails
+	 *@param
+	 *
+	 *
+	 */
 	
 	public Usuario buscarUsuarioString(String correo){
 		DBManager.connect();
@@ -241,6 +287,12 @@ public class DBManager {
 	    				
 		return usuarios.get(0);
 	}
+	/**
+	 *the method of buscar cancion which finds a song with the id of the song
+	 *@param
+	 *
+	 *
+	 */
 	
 	public Cancion buscarCancion(int id_cancion){
 		DBManager.connect();
@@ -273,6 +325,13 @@ public class DBManager {
 		    				
 			return lcanciones.get(0);
 	}
+	/**
+	 *the method of buscar canciones which finds a song with the name
+	 *@param
+	 *
+	 *
+	 */
+	
 	public ArrayList<Cancion> buscarCanciones(String nombre){
 		DBManager.connect();
 		Transaction tx = pm.currentTransaction();
@@ -304,6 +363,12 @@ public class DBManager {
 		    				
 			return lCanciones;
 		}	
+	/**
+	 *the method of obtener hora which gets the hour
+	 *
+	 *
+	 *
+	 */
 	
 	public  Hora obtenerHora(){
 	    Calendar fecha = new GregorianCalendar();
@@ -317,7 +382,13 @@ public class DBManager {
 	    return h;
 		
 	}
-
+	/**
+	 *the method of aniadir reproduccion which you can add a new reprodution 
+	 *@param
+	 *
+	 *
+	 */
+	
 	
 	public void aniadirReproduccion(int id_cancion, String correo){
 		Reproduccion reproduccionQ= new Reproduccion();
@@ -430,6 +501,12 @@ public class DBManager {
 	
 	}	
 	*/
+	/**
+	 *with this method we can know the reproductions of an user
+	 *@param
+	 *
+	 *
+	 */
 	
 	
 	public ArrayList<Reproduccion> usuarioReproducciones(String correo){
