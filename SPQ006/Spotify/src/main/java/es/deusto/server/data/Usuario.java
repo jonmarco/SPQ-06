@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 //import javax.jdo.annotations.PersistenceCapable;
 
+/**
+This class creates user objects
+@author: Jon Marco
+
+*/
 
 public class Usuario {
 

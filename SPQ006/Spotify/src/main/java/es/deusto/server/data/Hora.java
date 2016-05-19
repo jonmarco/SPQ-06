@@ -1,5 +1,12 @@
 package es.deusto.server.data;
 
+
+/**
+This class creates "date and time" objects
+@author: Jon Marco
+
+*/
+
 public class Hora {
 	
 	private int anio;

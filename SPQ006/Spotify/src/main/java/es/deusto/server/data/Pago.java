@@ -1,5 +1,10 @@
 package es.deusto.server.data;
 
+/**
+This class creates pay objects
+@author: Jon Marco
+
+*/
 public class Pago {
 
 	private int id_pago;

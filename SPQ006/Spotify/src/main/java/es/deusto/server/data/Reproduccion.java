@@ -3,6 +3,13 @@ package es.deusto.server.data;
 //import javax.jdo.annotations.PersistenceCapable;
 
 //@PersistenceCapable(detachable = "true")
+
+/**
+This class creates Play objects
+@author: Jon Marco
+
+*/
+
 public class Reproduccion {
 	
 	private int fecha;
