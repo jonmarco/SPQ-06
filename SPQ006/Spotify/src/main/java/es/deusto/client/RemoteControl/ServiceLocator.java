@@ -24,6 +24,11 @@ public class ServiceLocator {
      return instance;
     }
     
+    /**
+     * 
+     * set the service locator eith the Ip, port and server name.
+     *
+     */
     
     public void setService(String ip, String port, String serverName) {
 		if (System.getSecurityManager() == null) {
@@ -42,6 +47,13 @@ public class ServiceLocator {
 		}
 	}
 
+    /**
+     * get service
+     * @return
+     *
+     */
+    
+    
 	public ISpotify getService() {
 		return this.servicio;
 	}
