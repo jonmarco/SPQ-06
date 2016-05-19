@@ -1,5 +1,11 @@
 package es.deusto.server.dto;
 
+/**
+This class is to move user class data from server to client
+@author: Inigo Alonso
+
+*/
+
 public class UsuarioDTO {
 
 	private String correo;

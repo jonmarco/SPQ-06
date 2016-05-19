@@ -2,6 +2,12 @@ package es.deusto.server.dto;
 
 import java.io.Serializable;
 
+/**
+This class is to move pay class data from server to client
+@author: Inigo Alonso
+
+*/
+
 public class PagoDTO implements Serializable {
 
 	/**

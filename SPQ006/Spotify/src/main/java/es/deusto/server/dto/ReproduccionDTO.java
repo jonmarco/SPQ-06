@@ -5,6 +5,12 @@ import java.io.Serializable;
 import es.deusto.server.data.Cancion;
 import es.deusto.server.data.Usuario;
 
+/**
+This class is to move play class  from server to client
+@author: Inigo Alonso
+
+*/
+
 public class ReproduccionDTO implements Serializable {
 
 	/**

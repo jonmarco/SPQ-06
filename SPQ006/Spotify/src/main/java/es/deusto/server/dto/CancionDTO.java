@@ -3,6 +3,12 @@ package es.deusto.server.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+This class is to move song class data from server to client
+@author: Inigo Alonso
+
+*/
+
 public class CancionDTO implements Serializable{
 		
 	
