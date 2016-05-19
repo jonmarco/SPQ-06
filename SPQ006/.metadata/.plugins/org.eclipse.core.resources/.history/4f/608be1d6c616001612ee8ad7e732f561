@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package RemoteControl;
+
+import java.rmi.Naming;
+
+import server.remote.ItralalaFacade;
+
+
+@SuppressWarnings("deprecation")
+public class ServiceLocator {
+    
+    
+    public static ServiceLocator instance = null;
+    
+    private ItralalaFacade servicio;
+    
+    public static ServiceLocator getInstance()
+    {
+        if(instance == null)
+        {
+            instance = new ServiceLocator();
+        }
+     
+     return instance;
+    }
+    
+    
+    public void setService(String ip, String port, String serverName) {
+		if (System.getSecurityManager() == null) {
+			System.setSecurityManager(new java.rmi.RMISecurityManager());
+		}
+
+		try {
+                    // direccion de la IP, Puerto y Nombre del server
+			String URL = "//" + ip + ":" + port + "/" + serverName;
+                       // returns a reference to a rmi object associated with the specified name
+			this.servicio = (ItralalaFacade) Naming.lookup(URL);
+		} catch (Exception ex) {
+			System.err.println("# Error locating remote facade: " + ex);
+		}
+	}
+
+	public ItralalaFacade getService() {
+		return this.servicio;
+	}
+    
+    
+  
+    
+}

@@ -1,0 +1,102 @@
+package es.deusto.client.GUI;
+
+import javax.swing.JPanel;
+import javax.swing.border.EtchedBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.border.BevelBorder;
+import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class PnlUsuarioLogin extends JPanel {
+	private JTextField txtusername;
+	private JPasswordField txtpassword;
+	private PnlCarga pnlcarga;
+
+	/**
+	 * Create the panel.
+	 */
+	public PnlUsuarioLogin() {
+		setBackground(new Color(128, 128, 128));
+		setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		this.setBounds(0, 0, 970, 556);
+		setLayout(null);
+		
+		JPanel pnldatos = new JPanel();
+		pnldatos.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		pnldatos.setBounds(502, 118, 349, 359);
+		add(pnldatos);
+		pnldatos.setLayout(null);
+		
+		JLabel lblusername = new JLabel("UserName:");
+		lblusername.setBounds(32, 49, 81, 16);
+		pnldatos.add(lblusername);
+		
+		txtusername = new JTextField();
+		txtusername.setBounds(32, 82, 287, 38);
+		pnldatos.add(txtusername);
+		txtusername.setColumns(10);
+		
+		JLabel lblpassword = new JLabel("Password:");
+		lblpassword.setBounds(32, 138, 81, 16);
+		pnldatos.add(lblpassword);
+		
+		JButton btnLogin = new JButton("Login");
+		// creamos el panel con la imagen de mi spotify inicial
+		pnlcarga = new PnlCarga();
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				// ejectuamos el hilo
+				pnlcarga.start();
+				
+				
+				// condicion de acceso a la base de datos
+				if(true)
+				{
+					// login(); // llamaremos al controller
+				}else
+				{
+					
+					
+				}
+				
+				
+				
+			}
+		});
+		btnLogin.setBounds(105, 252, 126, 38);
+		pnldatos.add(btnLogin);
+		
+		txtpassword = new JPasswordField();
+		txtpassword.setBounds(32, 167, 287, 38);
+		pnldatos.add(txtpassword);
+		
+		PnlCarga pnlCarga = new PnlCarga();
+		pnlCarga.setBounds(61, 82, 385, 400);
+		add(pnlCarga);
+
+		
+	}
+	
+	public boolean login()
+	{
+		String username;
+		String password;
+		
+		boolean login=false;
+		
+		username = txtusername.getText();
+		password = txtpassword.getText();
+		
+		
+		
+		
+		return login;
+	
+	}
+}

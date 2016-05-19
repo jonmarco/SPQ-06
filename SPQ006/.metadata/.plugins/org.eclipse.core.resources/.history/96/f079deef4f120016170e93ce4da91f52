@@ -1,0 +1,18 @@
+package main.java.es.deusto.ingenieria.spq.client.GUI;
+
+import javax.swing.JPanel;
+import javax.swing.border.EtchedBorder;
+
+public class PnlUsuarioLogin extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public PnlUsuarioLogin() {
+		setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		this.setBounds(100, 100, 970, 586);
+
+		
+	}
+
+}
