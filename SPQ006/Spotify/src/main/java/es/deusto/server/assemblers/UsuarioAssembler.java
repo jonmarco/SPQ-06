@@ -2,7 +2,14 @@ package es.deusto.server.assemblers;
 
 import es.deusto.server.data.Usuario;
 import es.deusto.server.dto.UsuarioDTO;
-
+/**
+	 * @author Ander Loziaga
+	 *
+	 */
+/**
+ * A usuarioAssembler classic class.
+ *
+ */
 public class UsuarioAssembler {
 	
 		public static UsuarioAssembler instance;
@@ -13,7 +20,10 @@ public class UsuarioAssembler {
 			}
 			return instance;
 		}
-
+		/**
+		 * a method tu get the DTO of a user
+		 *
+		 */
 		public UsuarioDTO getUsuarioDTO(Usuario usuario) {
 			UsuarioDTO dto = new UsuarioDTO(usuario.getCorreo());
 			return dto;
