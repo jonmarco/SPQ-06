@@ -5,6 +5,12 @@ import java.util.HashMap;
 import es.deusto.server.dao.DBManager;
 import es.deusto.server.data.Usuario;
 
+/**
+This class gives login service
+@author: Inigo Alonso
+
+*/
+
 public class LoginService {
 
 	public static LoginService instance = null;
@@ -29,6 +35,10 @@ public class LoginService {
 	}
 	
 	
+	/**
+	With this method, we check that the user and the passwords are corrects 
+
+	*/
 	
 	public boolean login(String _correo, String _pass)
 	{

@@ -8,6 +8,12 @@ import es.deusto.server.data.Cancion;
 import es.deusto.server.data.Reproduccion;
 import es.deusto.server.dto.ReproduccionDTO;
 
+/**
+
+@author: Inigo Alonso
+
+*/
+
 public class InteractuarService {
 
 	public static InteractuarService instance = null;
@@ -19,6 +25,12 @@ public class InteractuarService {
 		return instance;
 	}
 	
+	
+	
+	/**
+	With this method, we create a play, and we add it to the user that is going to listen
+
+	*/
 	public void aniadirReproduccion(String correo, int id_cancion) {
 		// mejor llamarla reproducirCancion
 		
@@ -44,6 +56,12 @@ public class InteractuarService {
 		}
 
 	}
+	
+	
+	/**
+	With this method, we list all the plays of a user 
+
+	*/
 	
 	public ArrayList<ReproduccionDTO> usuarioReproducciones(String id_usuario){
 		DBManager.getInstance();

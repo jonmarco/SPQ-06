@@ -8,6 +8,11 @@ import es.deusto.server.dao.DBManager;
 import es.deusto.server.data.Cancion;
 import es.deusto.server.dto.CancionDTO;
 
+/**
+This class gives service to search songs
+@author: Inigo Alonso
+
+*/
 
 public class BusquedaService {
 
@@ -23,7 +28,14 @@ public class BusquedaService {
 	private BusquedaService() {
 
 	}
-	// return de la cancion exacta
+	
+	
+	
+	
+	/**
+	With this method, we return the exact song 
+
+	*/
 	public CancionDTO buscarCancion(int id_cancion) {
 		DBManager.getInstance();
 		Cancion cancion = DBManager.getInstance().buscarCancion(id_cancion);
@@ -33,7 +45,11 @@ public class BusquedaService {
 		//return (CancionDTO) new CancionAssembler().assemble(cancionList);
 	}
 	
-	//return una listas de canciones con ese nombre
+	
+	/**
+	With this method, we list all the song with that name
+
+	*/
 	public ArrayList<CancionDTO> buscarCanciones(String nombre) {
 		//List<CancionDTO> songs = new ArrayList<>();
 		DBManager.getInstance();
