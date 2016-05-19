@@ -10,6 +10,12 @@ import es.deusto.server.services.BusquedaService;
 import es.deusto.server.services.InteractuarService;
 import es.deusto.server.services.LoginService;
 
+/**
+This class is the of Spotify
+@author: Inigo Alonso
+
+*/
+
 public class Spotify extends UnicastRemoteObject implements ISpotify {
 
 	/**
@@ -48,18 +54,29 @@ public class Spotify extends UnicastRemoteObject implements ISpotify {
 	
 	
 	
+	/**
+	With this method, we find searching the name of the song
 
+	*/
 	@Override
 	public ArrayList<CancionDTO> buscarCanciones(String titulo) throws RemoteException {
 		// TODO Auto-generated method stub
 		return BusquedaService.getInstance().buscarCanciones(titulo);
 	}
+	
+	/**
+	With this method, we list the name of all of the song
 
+	*/
 	@Override
 	public CancionDTO buscarCancion(int id_cancion) throws RemoteException {
 		return BusquedaService.getInstance().buscarCancion(id_cancion);
 	}
 
+	/**
+	With this method, we add a new play 
+
+	*/
 	@Override
 	public void aniadirReproduccion(int id_cancion, String correo) throws RemoteException {
 		// TODO Auto-generated method stub
@@ -67,22 +84,29 @@ public class Spotify extends UnicastRemoteObject implements ISpotify {
 				
 	}
 	
+	/**
+	With this method, we do the pays
+
+	*/
 	public ArrayList<ReproduccionDTO> usuarioReproducciones(String id_usuario){
 		return InteractuarService.getInstance().usuarioReproducciones(id_usuario);
 	}
 	
+	/**
+	With this method, we will connect if exists (boolean=true)
 
-	// METODO A MODIFICAR NOS CONECTAREMOS Y SI EXISTE BOOLEAN=TRUE
+	*/
 	public boolean login(String nombre_usuario, String contrasenia) throws RemoteException {
 		System.out.println(nombre_usuario+" est� tratando de conectar.");
 		return LoginService.getInstance().login(nombre_usuario, contrasenia);
 	}
-	@Override
+	
+	/*@Override
 	public boolean pagoPaypal(String nombre, String contrasenia, String[] args) throws RemoteException {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
+	*/
 	/*
 	@Override
 	public boolean pagoPaypal(String nombre, String contrasenia, String[] args) throws RemoteException {
