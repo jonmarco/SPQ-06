@@ -3,6 +3,11 @@ package es.deusto.server.data;
 //import javax.jdo.annotations.PersistenceCapable;
 
 //@PersistenceCapable(detachable = "true")
+/**
+This class creates song objects
+@author: Jon Marco
+
+*/
 public class Cancion {
 
 	private int id_cancion;
