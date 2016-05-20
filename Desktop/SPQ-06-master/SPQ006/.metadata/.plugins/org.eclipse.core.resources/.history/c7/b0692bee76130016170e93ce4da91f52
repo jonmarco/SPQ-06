@@ -1,0 +1,14 @@
+package es.deusto.client.GUI;
+
+import javax.swing.JPanel;
+
+public class PnlCarga extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public PnlCarga() {
+
+	}
+
+}

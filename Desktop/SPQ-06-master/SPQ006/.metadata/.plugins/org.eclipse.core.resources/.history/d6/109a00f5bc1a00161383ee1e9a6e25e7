@@ -1,0 +1,37 @@
+package es.deusto.server.services;
+
+import java.util.HashMap;
+
+import es.deusto.server.dao.DBManager;
+import es.deusto.server.data.Usuario;
+
+public class LoginService {
+
+	public static LoginService instance = null;
+
+	public static LoginService getInstance() {
+		if (instance == null) {
+			instance = new LoginService();
+		}
+		return instance;
+	}
+
+	public LoginService(String _ip, String _puerto, String _nombre) {
+	}
+	
+	public synchronized boolean autentificarUsuario(String correo, String pass){
+		HashMap<String, Usuario> Husuarios;
+		Husuarios=DBManager.getInstance().getHusuarios();
+		Usuario usr;
+		
+	
+		usr=Husuarios.get(correo);
+		if(usr==null){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
+	
+}

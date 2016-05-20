@@ -1,0 +1,51 @@
+package es.deusto.client.GUI;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
+public class PnlCarga extends JPanel {
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private ImageIcon imgic;
+	// especificamos el nombre de la ruta
+	private String nombreruta="";
+	private String[] cargaimagenes = {"carga.png","cargauno.png","cargados.png","cargatres.png"};
+	/**
+	 * Create the panel.
+	 */
+	
+	public PnlCarga(String _nombreruta) {
+
+		this.nombreruta=_nombreruta;
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		
+		
+		java.net.URL imgURL = getClass().getResource(nombreruta);
+	    if (imgURL != null) {
+	    	Graphics2D gr=(Graphics2D)g;
+			Dimension t = getSize();
+	    	imgic= new ImageIcon(imgURL);
+			gr.drawImage(imgic.getImage(), 0, 0, t.width, t.height, null);
+	        
+	    } else {
+	        System.err.println("no se encontro el archivo especificado" + nombreruta);
+	        
+	    }
+	    
+		setOpaque(false);
+		super.paint(g);
+		
+	}
+
+}
