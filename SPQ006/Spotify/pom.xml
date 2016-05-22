@@ -104,7 +104,7 @@
          <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
+		<version>3.5.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
@@ -134,7 +134,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>3.5.1</version>
+				<version>2.5.1</version>
 				<configuration>
 				 <instrumentation>
 					 <!-- This line is for skipping set/get and constructor trivial methods. The coverage is higher-->
@@ -168,9 +168,9 @@
 							-->
 						</regexes>
 					</check>
-				<formats>
-		<format>html</format>
-		<format>xml</format>
+		<formats>
+			<format>html</format>
+			<format>xml</format>
 		</formats>
 		<check>
 			<haltOnFailure>false</haltOnFailure>
@@ -251,7 +251,7 @@
 					<plugin>  
 						<groupId>org.codehaus.mojo</groupId>  
 						<artifactId>exec-maven-plugin</artifactId>  
-						<version>1.2.1</version>  
+						<version>1.1</version>  
 						<configuration>  
 									<mainClass>es.deusto.server.Server</mainClass>
 									<systemProperties>
@@ -290,7 +290,7 @@
 					<plugin>  
 						<groupId>org.codehaus.mojo</groupId>  
 						<artifactId>exec-maven-plugin</artifactId>  
-						<version>1.2.1</version>  
+						<version>1.1</version>  
 						<configuration>  
 									<mainClass>es.deusto.client.SpotifyClient</mainClass>
 									<systemProperties>
