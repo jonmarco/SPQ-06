@@ -168,6 +168,18 @@
 							-->
 						</regexes>
 					</check>
+				<formats>
+		<format>html</format>
+		<format>xml</format>
+		</formats>
+		<check>
+			<haltOnFailure>false</haltOnFailure>
+		</check>
+ 		<formats>
+		 <format>xml</format>
+ 		</formats>	
+					
+					
 				</configuration>
 			</plugin>
         </plugins>
