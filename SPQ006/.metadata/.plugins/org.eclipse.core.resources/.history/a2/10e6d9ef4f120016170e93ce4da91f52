@@ -1,0 +1,14 @@
+package main.java.es.deusto.ingenieria.spq.client.GUI;
+
+import javax.swing.JPanel;
+
+public class UserLogin extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public UserLogin() {
+
+	}
+
+}

@@ -1,0 +1,107 @@
+package es.deusto.client.GUI;
+
+import javax.swing.JPanel;
+import javax.swing.border.EtchedBorder;
+
+import es.deusto.client.Validar;
+
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.border.BevelBorder;
+import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class PnlUsuarioLogin extends JPanel implements ActionListener{
+	private JTextField txtusername;
+	private JPasswordField txtpassword;
+	private PnlCarga pnlcarga;
+	private JButton btnlogin;
+
+	/**
+	 * Create the panel.
+	 */
+	public PnlUsuarioLogin() {
+		setBackground(new Color(128, 128, 128));
+		setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		this.setBounds(0, 0, 970, 556);
+		setLayout(null);
+		
+		JPanel pnldatos = new JPanel();
+		pnldatos.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		pnldatos.setBounds(502, 118, 349, 359);
+		add(pnldatos);
+		pnldatos.setLayout(null);
+		
+		JLabel lblusername = new JLabel("UserName:");
+		lblusername.setBounds(32, 49, 81, 16);
+		pnldatos.add(lblusername);
+		
+		txtusername = new JTextField();
+		txtusername.setBounds(32, 82, 287, 38);
+		pnldatos.add(txtusername);
+		txtusername.setColumns(10);
+		
+		JLabel lblpassword = new JLabel("Password:");
+		lblpassword.setBounds(32, 138, 81, 16);
+		pnldatos.add(lblpassword);
+		
+		btnlogin = new JButton("Login");
+		// creamos el panel con la imagen de mi spotify inicial
+		pnlcarga = new PnlCarga();
+		btnlogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+			}
+		});
+		btnlogin.setBounds(105, 252, 126, 38);
+		pnldatos.add(btnlogin);
+		
+		txtpassword = new JPasswordField();
+		txtpassword.setBounds(32, 167, 287, 38);
+		pnldatos.add(txtpassword);
+		
+		PnlCarga pnlCarga = new PnlCarga();
+		pnlCarga.setBounds(61, 82, 385, 400);
+		add(pnlCarga);
+
+		
+	}
+	
+	public boolean login()
+	{
+		String mail;
+		String password;
+		boolean login=false;
+		Validar va = new Validar();
+		
+		
+		mail = txtusername.getText();
+		password = txtpassword.getText();
+		
+		if(va.validarEmail(mail) && va.validarPassword(password))	
+			login=true;
+		else
+			login=false;
+			
+		
+		return login;
+	
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == btnlogin)
+		{
+			pnlcarga.start();
+			
+			
+		}
+	}
+}

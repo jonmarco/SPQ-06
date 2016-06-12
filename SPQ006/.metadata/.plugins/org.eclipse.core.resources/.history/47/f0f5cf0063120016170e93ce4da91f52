@@ -1,0 +1,39 @@
+package es.deusto.client;
+
+import static org.junit.Assert.*;
+
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
+import org.databene.contiperf.junit.ContiPerfRule;
+import org.junit.Rule;
+import org.junit.Test;
+
+//contiperf
+//nos permite usar los test Junit como test de rendimiento
+
+@PerfTest(invocations=10)
+@Required(max=3000)
+public class LoginUserTest {
+
+	
+	// activamos contiperfrule
+	@Rule
+	public ContiPerfRule cont = new ContiPerfRule();
+	@Test
+	// especificamos los datos de ejecucion
+	
+	public void testLogin() throws Exception{
+		fail("Not yet implemented");
+		Thread.sleep(2500);
+	}
+	
+	
+	// we check that de data in txt is correct
+	@Test
+	public void datacorrect() throws Exception
+	{
+		fail("Not yet implemented");
+		Thread.sleep(2500);
+	}
+
+}
