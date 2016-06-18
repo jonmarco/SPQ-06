@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete 4 elements from project &apos;Spotify&apos;&#x0D;&#x0A;- Original project: &apos;Spotify&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     mispotify.png&#x0D;&#x0A;     mispotifycargados.png&#x0D;&#x0A;     mispotifycargatres.png&#x0D;&#x0A;     mispotifycargauno.png" description="Delete elements" element1="src/main/java/mispotifycargados.png" element2="src/main/java/mispotifycargauno.png" element3="src/main/java/mispotify.png" element4="src/main/java/mispotifycargatres.png" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="4" stamp="1462728988610" subPackages="false" version="1.0"/>
-</session>

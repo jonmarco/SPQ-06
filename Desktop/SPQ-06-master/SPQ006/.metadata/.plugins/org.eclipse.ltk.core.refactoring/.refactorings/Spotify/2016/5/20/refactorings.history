@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;&apos; to &apos;es.deusto.client.GUI.PnlCarga.carga&apos;&#x0D;&#x0A;- Original project: &apos;Spotify&apos;&#x0D;&#x0A;- Destination element: &apos;es.deusto.client.GUI.PnlCarga.carga&apos;&#x0D;&#x0A;- Original element: &apos;es.deusto.client.GUI.PnlCarga.imagen&apos;" description="Copy field" destination="/src\/main\/java&lt;es.deusto.client.GUI{PnlCarga.java[PnlCarga^carga" element1="/src\/main\/java&lt;es.deusto.client.GUI{PnlCarga.java[PnlCarga^imagen" flags="589830" id="org.eclipse.jdt.ui.copy" members="1" policy="org.eclipse.jdt.ui.copyMembers" stamp="1463500350264" version="1.0"/>
-</session>
